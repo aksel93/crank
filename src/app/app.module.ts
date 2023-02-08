@@ -1,14 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppComponent } from './app.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import {AppComponent} from './app.component'
+import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { EquationsComponent } from './equations/equations.component';
+import { TableComponent } from './table/table.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    routingComponents,
+    EquationsComponent,
+    TableComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, MatTabsModule, AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,54 @@
+h1{
+    height: 100px;
+    width: auto;
+    text-align: center;
+    font-family: 'Lucida Sans';
+}
+#buttons{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(96, 108, 110, 1);
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+  }
+body{
+    background-image: url("crank.png");
+    background-color: rgba(96, 108, 110, 0.9);
+    background-repeat: no-repeat;
+    background-position: center;
+    height:100%;
+    width:100%;
+    overflow:auto;
+}
+#button1{
+    width: 200px;
+    background-color: #2dc254;
+    color: white;
+}
+#button1:hover{
+background-color: grey;
+transition: 0.25s;
+}
+#button2{
+    width: 200px;
+    background-color: #2dc254;
+    color: white;
+}
+#button2:hover{
+    background-color: grey;
+    transition: 0.25s;
+    }
+#button3{
+    width: 200px;
+    background-color: #2dc254;
+    color: white;
+}
+#button3:hover{
+    background-color: grey;
+    transition: 0.25s;
+    }

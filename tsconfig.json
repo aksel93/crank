@@ -3,9 +3,10 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
+    "outDir": "./dist/",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "noImplicitAny": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
