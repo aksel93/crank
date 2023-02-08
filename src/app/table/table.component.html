@@ -1,0 +1,149 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+<div [ngSwitch] ="tab">
+         <div id="case1" *ngSwitchCase ="1">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col">
+           <label for="L2" id = "L2">L2:</label>
+           <input type = "text" id = "L2" name = "L2" #link2 (change)="onLink2(link2)">&nbsp;
+          </div>
+          <div class="col">
+           <label for="L3" id = "L3">L3:</label>
+           <input type = "text" id = "L3" name = "L3" #link3 (change)="onLink3(link3)">
+          </div>
+          <div class="col">
+           <label for="CA" id = "CA">Crank &angle; Increment:</label>
+           <input type = "text" id = "CA" name = "CA" #crank (change)="onCrank(crank)">
+          </div>
+        </div>
+        <div class="row">
+      <div class="col">
+           <button class="btns" (click)="calcIn()">Calculate</button>
+           <button class="btns" (click)="clear()">Clear</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+           <table>
+             <tr>
+                 <th>Crank &angle;</th>
+                 <th>&theta;</th>
+                 <th>&gamma;</th>
+             </tr>
+             <tr *ngFor= "let row of rows; let i = index">
+                 <td>{{row.ca}}</td>
+                 <td>{{row.th}}</td>
+                 <td>{{row.gr}}</td>
+             </tr>
+           </table>
+          </div>
+        </div>
+          </div>
+           </div>
+         <div id="case2" *ngSwitchCase ="2">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col">
+         <label for="L1" id = "L1">L1:</label>
+         <input type = "text" id = "L1" name = "L1" #link1 (change)="onLink1(link1)">&nbsp;
+        </div>
+        <div class="col">
+         <label for="L2" id = "L2">L2:</label>
+         <input type = "text" id = "L2" name = "L2" #link2 (change)="onLink2(link2)">&nbsp;
+        </div>
+        <div class="col">
+         <label for="L3" id = "L3">L3:</label>
+         <input type = "text" id = "L3" name = "L3" #link3 (change)="onLink3(link3)">
+        </div>
+        <div class="col">
+         <label for="CA" id = "CA">Crank &angle; Increment:</label>
+         <input type = "text" id = "CA" name = "CA" #crank (change)="onCrank(crank)">
+        </div>
+        </div>
+        <div class="row">
+          <div class="col">
+         <button class="btns" (click)="calcOff()">Calculate</button>
+         <button class="btns" (click)="clear()">Clear</button>
+        </div>
+        </div>
+        <div class="row">
+         <div class="col">  
+         <table>
+           <tr>
+               <th>Crank &angle;</th>
+               <th>&theta;<sub>3</sub></th>
+               <th>&theta;<sub>4</sub></th>
+               <th>&gamma;</th>
+           </tr>
+           <tr *ngFor= "let row of rows; let i = index">
+               <td>{{row.ca}}</td>
+               <td>{{row.th}}</td>
+               <td>{{row.th4}}</td>
+               <td>{{row.gr}}</td>
+           </tr>
+         </table>
+        </div>
+        </div>
+        </div>
+         </div>
+         <div id="case3" *ngSwitchCase ="3">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col">
+         <label for="L1" id = "L1">L1:</label>
+         <input type = "text" id = "L1" name = "L1" #link1 (change)="onLink1(link1)">&nbsp;
+        </div>
+        <div class="col">
+         <label for="L2" id = "L2">L2:</label>
+         <input type = "text" id = "L2" name = "L2" #link2 (change)="onLink2(link2)">
+        </div>
+        <div class="col">
+         <label for="L3" id = "L3">L3:</label>
+         <input type = "text" id = "L3" name = "L3" #link3 (change)="onLink3(link3)">&nbsp;
+        </div>
+        </div>
+        <div class="row">
+        <div class="col">
+         <label for="L4" id = "L4">L4:</label>
+         <input type = "text" id = "L4" name = "L4" #link4 (change)="onLink4(link4)">
+        </div>
+         <div class="col">
+         <label for="CA" id = "CA">Crank &angle; Increment:</label>
+         <input type = "text" id = "CA" name = "CA" #crank (change)="onCrank(crank)">
+         </div>
+         <div class="col">
+         <button class="btns" (click)="calcfour()">Calculate</button>
+         <button class="btns" (click)="clear()">Clear</button>
+        </div>
+           </div>
+           <div class="row">
+            <div class="col">
+         <table>
+           <tr>
+               <th>Crank &angle;</th>
+               <th>BD</th>
+               <th>&theta;<sub>3</sub></th>
+               <th>&theta;<sub>4</sub></th>
+               <th>&gamma;</th>
+           </tr>
+           <tr *ngFor= "let row of rows; let i = index">
+               <td>{{row.ca}}</td>
+               <td>{{row.bd}}</td>
+               <td>{{row.th}}</td>
+               <td>{{row.th4}}</td>
+               <td>{{row.gr}}</td>
+           </tr>
+         </table>
+        </div>
+      </div>
+         </div>
+        </div>
+         <div *ngSwitchDefault></div>
+       </div>
+          <div class="btn-group d-flex fixed-bottom">
+       <button type="button" class="btn" (click)=openTab(0)>In-Line</button>
+          <button type="button" class="btn" (click)=openTab(1)>Offset</button>
+          <button type="button" class="btn" (click)=openTab(2)>Four Bar</button>
+          </div>
+   </body>
